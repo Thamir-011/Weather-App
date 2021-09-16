@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-sec {
+  padding: 3rem 0;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.searchBar input {
+  border: none;
+  outline: none;
+  font-size: 1.5vw;
+  width: 300px;
+  margin: 3px;
+}
+
+.searchBar input::placeholder {
+  font: red;
+}
+
+.searchBar i {
+  opacity: 0.5;
+}
+
+/* error and loading message */
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  font-size: 1.5rem;
+}
+
+/* end of error and loading message */
+
+.current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5 ease-in;
+}
+
+.current div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.current .date {
+  align-items: flex-start;
+}
+
+.current .date h1 {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.current .date .location {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.current .date .location i {
+  opacity: 0.7;
+}
+
+.current .weather img {
+  width: 13rem;
+}
+
+.current .temperature {
+  display: inline-block;
+  border-left: 1px solid rgba(21, 104, 129, 0.315);
+  padding-left: 1rem;
+}
+
+.current .temperature h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.current .temperature p {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Forecast section */
+
+.forecast {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.5rem 1rem;
+  margin-top: 3rem;
+}
+
+.forecast .forecastTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.forecast .forecastTitle h1 {
+  font-size: 1.5rem;
+}
+
+.forecast .forecastTitle span {
+  height: 1px;
+  width: 83%;
+  background: black;
+  display: block;
+  opacity: 0.1;
+}
+
+.forecast .dailyForecast {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.forecast .dayForecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast .dayForecast h3 {
+  text-transform: uppercase;
+  color: rgba(83, 83, 133, 0.747);
+}
+
+.forecast .dayForecast .tempMinMax {
+  display: flex;
+}
+
+.forecast .dayForecast p {
+  margin: 0 3px;
+}
+
+.forecast .dayForecast .tempMinMax .min {
+  opacity: 0.6;
+}
+
+/* End of forecast section */
+
+@media screen and (max-width: 1224px) {
+  .content .search-sec {
+    padding-top: 1rem;
+  }
+
+  .forecast {
+    bottom: 0;
+    flex-shrink: 0;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .forecast .forecastTitle h1 {
+    font-size: 1.5rem;
+  }
+
+  .dailyForecast {
+    flex-direction: column;
+  }
+
+  .dayForecast {
+    width: 100%;
+    flex-direction: row !important;
+    justify-content: flex-end;
+  }
+
+  .dayForecast h3 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .dayForecast img {
+    width: 4rem;
+  }
+
+  .dayForecast h3 {
+    margin-right: auto;
+  }
+
+  .dayForecast img {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .content .search-sec {
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .content .search-sec .searchBar {
+  }
+
+  .content .search-sec .searchBar input {
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .weather-sec {
+    width: 100%;
+  }
+
+  .weather-sec .current {
+    display: grid;
+  }
+
+  .weather-sec .current .date {
+    grid-row: 2/4;
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.39);
+    border-radius: 10px;
+    margin: 0;
+  }
+
+  .weather-sec .current .date h1 {
+    display: none;
+  }
+
+  .weather-sec .current .weather {
+    grid-row: 1/4;
+    grid-column: 3/4;
+  }
+
+  .weather-sec .current .weather p {
+    display: none;
+  }
+
+  .weather-sec .current .temperature {
+    border: none;
+  }
+}
